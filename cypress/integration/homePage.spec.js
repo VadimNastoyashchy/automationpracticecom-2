@@ -1,4 +1,4 @@
-const { HomePage } = require("../pom/homePage");
+import { HomePage } from "../pom/HomePage";
 
 const homePage = new HomePage();
 
