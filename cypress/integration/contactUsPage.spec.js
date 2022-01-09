@@ -1,31 +1,17 @@
-describe("Task 3. Cotact Us page", () => {
-  //   before(() => {
-  //     cy.visit("http://automationpractice.com/index.php");
-  //   });
+import { ContactUs } from "../pom/contactUs";
+import { HomePage } from "../pom/HomePage";
 
-  it("Step 1. Opens Home Page", () => {
-    cy.visit("http://automationpractice.com/index.php");
-    cy.url().should("include", "http://automationpractice.com/index.php");
-    cy.get("#index").should("be.visible");
-  });
+const homePage = new HomePage();
+const contactUsPage = new ContactUs();
 
-  it("Step 2. Clicks “Contact Us", () => {
-    cy.visit("http://automationpractice.com/index.php");
-    cy.get("div.nav").contains("Contact us").click();
-    cy.url().should(
-      "eq",
-      "http://automationpractice.com/index.php?controller=contact"
-    );
-    cy.get("#page").should("be.visible");
-  });
+describe("ContactUs page tests", () => {
+  it("Smoke - Contact Us page", () => {
+    homePage
+      .visit()
+      .checkPageUrl()
+      .checkContentVisibility()
+      .clickAndCheckContactUsLink();
 
-  it("Step 3. Checks Contact Us page header", () => {
-    cy.visit("http://automationpractice.com/index.php?controller=contact");
-    cy.get("#header").should("exist").and("be.visible");
-  });
-
-  it("Step 4. Checks Contact Us page footer", () => {
-    cy.visit("http://automationpractice.com/index.php?controller=contact");
-    cy.get(".footer-container").should("exist").and("be.visible");
+    contactUsPage.checkContentVisibility().checkHeader().checkFooter();
   });
 });
