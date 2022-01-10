@@ -21,4 +21,8 @@ describe('Home Page tests', () => {
       .checkContentVisibility()
       .checkContentExisting();
   });
+
+  it('Smoke Git Hub', () => {
+    cy.visit('https://github.com');
+  });
 });
