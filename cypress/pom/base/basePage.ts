@@ -1,39 +1,40 @@
 export class BasePage {
-  protected CONTAINER: string;
+  protected SELECTOR: string;
   protected PAGE_NAME: string;
-  PAGE_URL;
+  protected PAGE_URL: string;
 
-  constructor(container: string, page_name, page_url?: string) {
-    this.CONTAINER = container;
+  constructor(selector: string, page_name: string, page_url?: string) {
+    this.SELECTOR = selector;
     this.PAGE_NAME = page_name;
     this.PAGE_URL = page_url;
   }
 
-  get container() {
-    return cy.get(this.CONTAINER, { timeout: 10000 });
+  get container(): Cypress.Chainable {
+    return cy.get(this.SELECTOR, { timeout: 10000 });
   }
 
-  visit() {
+  visit(): this {
     cy.visit(this.PAGE_URL);
 
     return this;
   }
 
-  checkPageUrl() {
+  checkPageUrl(): this {
     cy.location('href', { timeout: 10000 }).should('include', this.PAGE_URL);
 
     return this;
   }
 
-  checkContentVisibility() {
+  checkContentVisibility(): this {
     this.container.should('be.visible');
 
     return this;
   }
 
-  checkContentExisting() {
+  checkContentExisting(): this {
     this.container.should('exist');
 
     return this;
   }
+
 }
