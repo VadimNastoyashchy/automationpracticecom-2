@@ -1,20 +1,17 @@
-import { Header } from "../pom/header";
-import { HomePage } from "../pom/HomePage";
+import { Header } from '../pom/header';
+import { Footer } from '../pom/footer';
+import { HomePage } from '../pom/HomePage';
 
 const homePage = new HomePage();
 const header = new Header();
-// TODO: const footer
+const footer = new Footer();
 
-describe("Home Page tests", () => {
-  it("Smoke Home Page", () => {
-    homePage
-      .visit()
-      .checkPageUrl()
-      .checkContentVisibility();
+describe('Home Page tests', () => {
+  it('Smoke Home Page', () => {
+    homePage.visit().checkPageUrl().checkContentVisibility();
 
-    header 
-      .checkContentVisibility();
+    header.checkContentVisibility().checkContentExisting();
 
-    // TODO:FOOTER.....
+    footer.checkContentVisibility().checkContentExisting();
   });
 });

@@ -17,5 +17,8 @@
   "homepage": "https://github.com/VadimNastoyashchy/automationpracticecom-2#readme",
   "dependencies": {
     "cypress": "^9.2.0"
+  }, 
+  "prettier": {
+    "singleQuote": true
   }
 }

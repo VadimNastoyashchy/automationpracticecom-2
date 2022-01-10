@@ -31,4 +31,9 @@ export class BasePage {
     return this;
   }
 
+  checkContentExisting() {
+    this.container.should('exist');
+
+    return this;
+  }
 }

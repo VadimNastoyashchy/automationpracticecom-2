@@ -1,24 +1,23 @@
-import { ContactUs } from "../pom/contactUs";
-import { Header } from "../pom/header";
-import { HomePage } from "../pom/HomePage";
+import { ContactUsPage } from '../pom/contactUsPage';
+import { Footer } from '../pom/footer';
+import { Header } from '../pom/header';
+import { HomePage } from '../pom/HomePage';
 
 const homePage = new HomePage();
-const contactUsPage = new ContactUs();
+const contactUsPage = new ContactUsPage();
 const header = new Header();
+const footer = new Footer();
 
-describe('ContactUs page tests', () => {
+describe('ContactUs Page tests', () => {
   it('Smoke - Contact Us page', () => {
-    homePage
-      .visit()
-      .checkPageUrl()
-      .checkContentVisibility();
+    homePage.visit().checkPageUrl().checkContentVisibility();
 
-    header
-      .checkContactUsLink()
-      .clickContactUsLink()
+    header.checkContactUsLink().clickContactUsLink();
 
-    contactUsPage
-      .checkPageUrl()
-      .checkContentVisibility();
+    contactUsPage.checkPageUrl().checkContentVisibility();
+
+    header.checkContentExisting().checkContentVisibility();
+
+    footer.checkContentExisting().checkContentVisibility();
   });
 });
