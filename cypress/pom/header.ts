@@ -5,17 +5,17 @@ export class Header extends BasePage {
         super('#header', 'Header');
     }
 
-    get contactUsLink() {
+    get contactUsLink(): Cypress.Chainable {
         return this.container.find('#contact-link', { timeout: 10000 });
     }
 
-    checkContactUsLink() {
+    checkContactUsLink(): this {
         this.contactUsLink.should('be.visible');
 
         return this;
     }
 
-    clickContactUsLink() {
+    clickContactUsLink(): void {
         this.contactUsLink.click();
     }
 }

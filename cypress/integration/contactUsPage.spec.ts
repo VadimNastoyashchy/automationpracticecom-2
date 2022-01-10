@@ -1,6 +1,6 @@
-import { ContactUsPage } from '../pom/contactUsPage';
-import { Footer } from '../pom/footer';
-import { Header } from '../pom/header';
+import { ContactUsPage } from '../pom/ContactUsPage';
+import { Footer } from '../pom/Footer';
+import { Header } from '../pom/Header';
 import { HomePage } from '../pom/HomePage';
 
 const homePage = new HomePage();
