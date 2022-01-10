@@ -1,4 +1,6 @@
+
 export class BasePage {
+
   protected SELECTOR: string;
   protected PAGE_NAME: string;
   protected PAGE_URL: string;
