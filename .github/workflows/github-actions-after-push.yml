@@ -1,5 +1,8 @@
-name: GitHub Actions Manually
-on: [workflow_dispatch]
+name: GitHub Actions After Push Into Develop Branch
+on:
+  push:
+    branches:
+      - develop
 jobs:
  cypress-run:
     runs-on: ubuntu-latest
