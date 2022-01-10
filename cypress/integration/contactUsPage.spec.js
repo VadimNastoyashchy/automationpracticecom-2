@@ -1,17 +1,24 @@
 import { ContactUs } from "../pom/contactUs";
+import { Header } from "../pom/header";
 import { HomePage } from "../pom/HomePage";
 
 const homePage = new HomePage();
 const contactUsPage = new ContactUs();
+const header = new Header();
 
-describe("ContactUs page tests", () => {
-  it("Smoke - Contact Us page", () => {
+describe('ContactUs page tests', () => {
+  it('Smoke - Contact Us page', () => {
     homePage
       .visit()
       .checkPageUrl()
-      .checkContentVisibility()
-      .clickAndCheckContactUsLink();
+      .checkContentVisibility();
 
-    contactUsPage.checkContentVisibility().checkHeader().checkFooter();
+    header
+      .checkContactUsLink()
+      .clickContactUsLink()
+
+    contactUsPage
+      .checkPageUrl()
+      .checkContentVisibility();
   });
 });

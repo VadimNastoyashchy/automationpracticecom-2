@@ -15,32 +15,20 @@ export class BasePage {
 
   visit() {
     cy.visit(this.PAGE_URL);
+
     return this;
   }
 
   checkPageUrl() {
-    cy.location("href", { timeout: 10000 }).should("include", this.PAGE_URL);
+    cy.location('href', { timeout: 10000 }).should('include', this.PAGE_URL);
+
     return this;
   }
 
   checkContentVisibility() {
-    cy.get(this.CONTAINER).should("be.visible");
+    this.container.should('be.visible');
+
     return this;
   }
 
-  checkHeader() {
-    cy.get(".header-container").should("be.visible").and("exist");
-    return this;
-  }
-
-  checkFooter() {
-    cy.get(".footer-container").should("be.visible").and("exist");
-    return this;
-  }
-
-  clickAndCheckContactUsLink() {
-    cy.get("div.header-container").contains("Contact us").click();
-    cy.url().should("contains", "controller=contact");
-    return this;
-  }
 }
