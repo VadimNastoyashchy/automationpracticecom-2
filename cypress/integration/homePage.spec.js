@@ -8,10 +8,17 @@ const footer = new Footer();
 
 describe('Home Page tests', () => {
   it('Smoke Home Page', () => {
-    homePage.visit().checkPageUrl().checkContentVisibility();
+    homePage
+      .visit()
+      .checkPageUrl()
+      .checkContentVisibility();
 
-    header.checkContentVisibility().checkContentExisting();
+    header
+      .checkContentVisibility()
+      .checkContentExisting();
 
-    footer.checkContentVisibility().checkContentExisting();
+    footer
+      .checkContentVisibility()
+      .checkContentExisting();
   });
 });

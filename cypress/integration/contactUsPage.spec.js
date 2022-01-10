@@ -10,14 +10,25 @@ const footer = new Footer();
 
 describe('ContactUs Page tests', () => {
   it('Smoke - Contact Us page', () => {
-    homePage.visit().checkPageUrl().checkContentVisibility();
+    homePage
+      .visit()
+      .checkPageUrl()
+      .checkContentVisibility();
 
-    header.checkContactUsLink().clickContactUsLink();
+    header
+      .checkContactUsLink()
+      .clickContactUsLink();
 
-    contactUsPage.checkPageUrl().checkContentVisibility();
+    contactUsPage
+      .checkPageUrl()
+      .checkContentVisibility();
 
-    header.checkContentExisting().checkContentVisibility();
+    header
+      .checkContentExisting()
+      .checkContentVisibility();
 
-    footer.checkContentExisting().checkContentVisibility();
+    footer
+      .checkContentExisting()
+      .checkContentVisibility();
   });
 });
