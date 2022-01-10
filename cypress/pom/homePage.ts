@@ -1,4 +1,4 @@
-import { BasePage } from "./base/BasePage";
+import { BasePage } from "./base/basePage";
 
 export class HomePage extends BasePage {
   constructor() {
