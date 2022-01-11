@@ -1,4 +1,4 @@
-import { Header } from '../pom/Header';
+import { Header } from '../pom/';
 import { Footer } from '../pom/Footer';
 import { HomePage } from '../pom/HomePage';
 
