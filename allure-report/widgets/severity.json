@@ -1,0 +1,21 @@
+[ {
+  "uid" : "d9d6ff9109798d59",
+  "name" : "Smoke Home Page",
+  "time" : {
+    "start" : 1641938853824,
+    "stop" : 1641938858557,
+    "duration" : 4733
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a12f058c928e4898",
+  "name" : "An uncaught error was detected outside of a test",
+  "time" : {
+    "start" : 1641938851339,
+    "stop" : 1641938851728,
+    "duration" : 389
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]

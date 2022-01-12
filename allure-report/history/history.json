@@ -1,0 +1,41 @@
+{
+  "c59643030e1e776644fd5d1d6aa79cfc" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a12f058c928e4898",
+      "status" : "failed",
+      "statusDetails" : "The following error originated from your test code, not from Cypress.\n\n  > ContactUsPage is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
+      "time" : {
+        "start" : 1641938851339,
+        "stop" : 1641938851728,
+        "duration" : 389
+      }
+    } ]
+  },
+  "7a8768cefbf5c5d7d9e94815dc62d78c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d9d6ff9109798d59",
+      "status" : "passed",
+      "time" : {
+        "start" : 1641938853824,
+        "stop" : 1641938858557,
+        "duration" : 4733
+      }
+    } ]
+  }
+}
