@@ -1,4 +1,6 @@
 import { BasePage } from "./base/BasePage";
+import { ContactUsPage } from "./ContactUsPage";
+import { SignInPage } from "./SignInPage";
 
 export class Header extends BasePage {
     constructor() {
@@ -17,10 +19,12 @@ export class Header extends BasePage {
         return this;
     }
 
-    clickContactUsLink(): void {
+    clickContactUsLink(): ContactUsPage {
         cy.allure().startStep('Check "Contact Us" link is clickable');
         this.contactUsLink.click();
         cy.allure().endStep();
+
+        return new ContactUsPage();
     }
 
     get signInLink(): Cypress.Chainable {
@@ -35,9 +39,11 @@ export class Header extends BasePage {
         return this
     }
 
-    clickSignInLink(): void {
+    clickSignInLink(): SignInPage {
         cy.allure().startStep('Check "SignIn" link is clickable');
         this.signInLink.click();
         cy.allure().endStep;
+
+        return new SignInPage();
     }
 }

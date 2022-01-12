@@ -31,8 +31,5 @@ describe('SignIn Page tests', () => {
         footer
             .checkContentExisting()
             .checkContentVisibility();
-    })
-})
-
-
-
+    });
+});
