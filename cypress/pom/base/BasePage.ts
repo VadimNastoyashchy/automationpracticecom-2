@@ -16,13 +16,17 @@ export class BasePage {
   }
 
   visit(): this {
+    cy.allure().startStep(`Navigate and visit the page ${this.PAGE_URL}`);
     cy.visit(this.PAGE_URL);
+    cy.allure().endStep();
 
     return this;
   }
 
   checkPageUrl(): this {
+    cy.allure().startStep(`Check page url to include: ${this.PAGE_URL}`);
     cy.location('href', { timeout: 10000 }).should('include', this.PAGE_URL);
+    cy.allure().endStep();
 
     return this;
   }
