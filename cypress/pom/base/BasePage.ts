@@ -32,14 +32,16 @@ export class BasePage {
   }
 
   checkContentVisibility(): this {
+    cy.allure().startStep(`Check ${this.SELECTOR} element is visible`);
     this.container.should('be.visible');
-
+    cy.allure().endStep();
     return this;
   }
 
   checkContentExisting(): this {
+    cy.allure().startStep(`Check ${this.SELECTOR} element exists in the DOM`);
     this.container.should('exist');
-
+    cy.allure().endStep();
     return this;
   }
 
