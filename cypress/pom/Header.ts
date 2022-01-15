@@ -36,7 +36,7 @@ export class Header extends BasePage {
         this.signInLink.should('be.visible');
         cy.allure().endStep();
 
-        return this
+        return this;
     }
 
     clickSignInLink(): SignInPage {
