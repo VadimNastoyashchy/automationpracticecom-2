@@ -7,7 +7,7 @@ export class GeolocationAPI extends BaseAPI {
 
     checkCountryCode(): this {
         cy.allure().startStep('Check Country Code is UA');
-        cy.wrap(this).its('response').its('body').its('country_code').should('eq', 'UA');
+        cy.get('@response').its('body.country_code').should('eq', 'UA');
         cy.allure().endStep;
 
         return this
@@ -15,7 +15,7 @@ export class GeolocationAPI extends BaseAPI {
 
     checkCountryName(): this {
         cy.allure().startStep('Check Country Name is Ukraine');
-        cy.wrap(this).its('response').its('body').its('country_name').should('eq', 'Ukraine');
+        cy.get('@response').its('body.country_name').should('eq', 'Ukraine');
         cy.allure().endStep;
 
         return this

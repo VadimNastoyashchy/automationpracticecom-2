@@ -1,7 +1,7 @@
 
 export class BaseAPI {
     protected END_POINT: string;
-    response: object;
+    // response: object;
 
     constructor(end_point: string) {
         this.END_POINT = end_point;
@@ -10,9 +10,7 @@ export class BaseAPI {
 
     getResponse(): this {
         cy.allure().startStep('Send request and receive response');
-        cy.request(this.END_POINT).then((responseObj) => {
-            this.response = responseObj;
-        });
+        cy.request(this.END_POINT).as('response');
         cy.allure().endStep;
 
         return this
@@ -20,7 +18,7 @@ export class BaseAPI {
 
     checkResponseStatusIs200(): this {
         cy.allure().startStep('Check Response is 200 OK');
-        cy.wrap(this).its('response').its('status').should('eq', 200);
+        cy.get('@response').its('status').should('eq', 200);
         cy.allure().endStep;
 
         return this
