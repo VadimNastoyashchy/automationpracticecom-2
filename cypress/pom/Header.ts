@@ -1,4 +1,6 @@
 import { BasePage } from "./base/BasePage";
+import { ContactUsPage } from "./ContactUsPage";
+import { SignInPage } from "./SignInPage";
 
 export class Header extends BasePage {
     constructor() {
@@ -17,9 +19,31 @@ export class Header extends BasePage {
         return this;
     }
 
-    clickContactUsLink(): void {
+    clickContactUsLink(): ContactUsPage {
         cy.allure().startStep('Check "Contact Us" link is clickable');
         this.contactUsLink.click();
         cy.allure().endStep();
+
+        return new ContactUsPage();
+    }
+
+    get signInLink(): Cypress.Chainable {
+        return this.container.find('.header_user_info', { timeout: 10000 });
+    }
+
+    checkSignInLink(): this {
+        cy.allure().startStep('Check "SignIn" link is present on Header');
+        this.signInLink.should('be.visible');
+        cy.allure().endStep();
+
+        return this;
+    }
+
+    clickSignInLink(): SignInPage {
+        cy.allure().startStep('Check "SignIn" link is clickable');
+        this.signInLink.click();
+        cy.allure().endStep;
+
+        return new SignInPage();
     }
 }
