@@ -7,15 +7,19 @@ export class BaseAPI {
     }
 
 
-    GET(): this {
-        cy.allure().startStep('Send request and receive response');
-        cy.request(this.END_POINT).as('response')
+    public GET(): this {
+        cy.allure().startStep('Send GET request and receive response');
+        cy.request({
+            method: 'GET',
+            url: this.END_POINT,
+            failOnStatusCode: false
+          }).as('response');
         cy.allure().endStep;
-
+       
         return this
     }
 
-    checkResponseStatusCode(expectedStatusCode: number): this {
+    public checkResponseStatusCode(expectedStatusCode: number): this {
         cy.allure().startStep(`Check Response is ${expectedStatusCode}`);
         cy.get('@response').its('status').should('eq', expectedStatusCode);
         cy.allure().endStep;

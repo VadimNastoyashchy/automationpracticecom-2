@@ -6,7 +6,7 @@ export class GeolocationAPI extends BaseAPI {
         super('https://freegeoip.app/json/');
     }
 
-    checkCountryCode(): this {
+    public checkCountryCode(): this {
         cy.allure().startStep(`Check Country Code is ${CountryCode.UA}`);
         cy.get('@response').its('body.country_code').should('eq', CountryCode.UA);
         cy.allure().endStep;
@@ -14,7 +14,7 @@ export class GeolocationAPI extends BaseAPI {
         return this
     }
 
-    checkCountryName(): this {
+    public checkCountryName(): this {
         cy.allure().startStep(`Check Country Name is ${CountryName.Ukraine}`);
         cy.get('@response').its('body.country_name').should('eq', CountryName.Ukraine);
         cy.allure().endStep;
