@@ -17,6 +17,7 @@ describe('Home Page tests', () => {
       .checkContentVisibility()
       .checkContentExisting();
 
+  
     footer
       .checkContentVisibility()
       .checkContentExisting();

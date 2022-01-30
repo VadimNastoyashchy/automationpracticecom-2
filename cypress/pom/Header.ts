@@ -46,4 +46,21 @@ export class Header extends BasePage {
 
         return new SignInPage();
     }
+
+    checkSaleBanner(): this {
+        cy.allure().startStep('Check Sale banner is exist and visible');
+        cy.get('.banner img.img-responsive').should('exist').and('be.visible');
+        cy.allure().endStep();
+
+        return this;
+    }
+
+    checkShopPhone(): this {
+        cy.allure().startStep('Check the Shope phone title includs "Call us now" and "0123-456-789"');
+        cy.get('.shop-phone').should('exist').and('be.visible').contains('Call us now').contains('0123-456-789');
+        cy.allure().endStep();
+
+        return this;
+    }
+
 }
