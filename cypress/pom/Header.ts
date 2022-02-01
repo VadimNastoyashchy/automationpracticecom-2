@@ -3,8 +3,10 @@ import { ContactUsPage } from "./ContactUsPage";
 import { SignInPage } from "./SignInPage";
 
 export class Header extends BasePage {
+    
     constructor() {
         super('#header', 'Header');
+               
     }
 
     get contactUsLink(): Cypress.Chainable {
@@ -19,12 +21,12 @@ export class Header extends BasePage {
         return this;
     }
 
-    clickContactUsLink(): ContactUsPage {
+    clickContactUsLink(): this {
         cy.allure().startStep('Check "Contact Us" link is clickable');
         this.contactUsLink.click();
         cy.allure().endStep();
 
-        return new ContactUsPage();
+        return this;
     }
 
     get signInLink(): Cypress.Chainable {
@@ -62,5 +64,53 @@ export class Header extends BasePage {
 
         return this;
     }
+
+    checkHeaderLogo(): this {
+        cy.allure().startStep('Check the Header contains Logo image');
+        cy.get('#header .logo').should('exist').and('be.visible');
+        cy.allure().endStep();
+
+        return this;
+    }
+
+    checkSearchField(): this {
+        cy.allure().startStep('Check the Header contains Search field and button');
+        cy.get('#header #searchbox').should('exist').and('be.visible');
+        cy.get('#searchbox button.button-search').should('exist').and('be.visible');
+        cy.get('#searchbox input#search_query_top').invoke('attr', 'placeholder').should('contain', 'Search')
+        cy.allure().endStep();
+
+        return this;
+    }
+
+    checkCartSection(): this {
+        cy.allure().startStep('Check Cart section is present');
+        cy.get('div.shopping_cart').should('exist').and('be.visible');
+        cy.allure().endStep();
+
+        return this;
+    }
+
+
+    get mainMenuList(): Cypress.Chainable {
+        return this.container.find('ul.menu-content>li', { timeout: 1000 });
+    }
+    
+
+    checkMenuSection(): this {
+        cy.allure().startStep('Check that Menu sectionconsists: "Woman", "Dresses", "T-Shirts"');
+        cy.get('div#block_top_menu ul.menu-content').should('exist').and('be.visible')
+        this.mainMenuList.find('>a[title="Women"]').contains('Women');
+        this.mainMenuList.find('>a[title="Dresses"]').contains('Dresses');
+        this.mainMenuList.find('>a[title="T-shirts"]').contains('T-shirts')
+        // cy.get('ul.menu-content a[title="Women"]').contains('Women');
+        // cy.get('ul.menu-content a[title="Dresses"]').contains('Dresses');
+        // cy.get('ul.menu-content>li>a[title="T-shirts"]').contains('T-shirts')
+        cy.allure().endStep();
+
+        return this;
+    }
+
+  
 
 }

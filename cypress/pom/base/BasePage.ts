@@ -5,12 +5,14 @@ export class BasePage {
 
   protected SELECTOR: string;
   protected PAGE_NAME: string;
-  protected PAGE_URL: string;
+  protected PAGE_URL: string
+
 
   constructor(selector: string, page_name: string, page_url?: string) {
     this.SELECTOR = selector;
     this.PAGE_NAME = page_name;
     this.PAGE_URL = page_url;
+
   }
 
   get container(): Cypress.Chainable {
@@ -48,5 +50,7 @@ export class BasePage {
 
     return this;
   }
+
+  
 
 }
