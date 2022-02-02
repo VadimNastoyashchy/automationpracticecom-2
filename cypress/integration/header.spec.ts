@@ -12,20 +12,20 @@ describe('Heder test', () => {
             .checkPageUrl()
             .checkContentExisting()
             .checkContentVisibility()
-        header
-            .checkContentExisting()
-            .checkContentVisibility()
-            .checkSaleBanner()
-            .checkShopPhone()
-            .checkContactUsLink()
-            .clickContactUsLink()
-            .checkSignInLink()
-            .clickSignInLink()
+        // header
+        //     .checkContentExisting()
+        //     .checkContentVisibility()
+        //     .checkSaleBanner()
+        //     .checkShopPhone()
+        //     .checkContactUsLink()
+        //     .clickContactUsLink()
+        //     .checkSignInLink()
+        //     .clickSignInLink()
 
         header
             .checkHeaderLogo()
             .checkSearchField()
             .checkCartSection()
-            .checkMenuSection()
+            .checkMenuSection();
     })
 })

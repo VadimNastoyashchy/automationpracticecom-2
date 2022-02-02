@@ -1,7 +1,7 @@
 export enum CountryCode {
-    UA = "UA"
+    UA = 'UA'
 }
 
 export enum CountryName {
-    Ukraine = "Ukraine"
+    Ukraine = 'Ukraine'
 }
