@@ -17,9 +17,29 @@ describe('Home Page tests', () => {
       .checkContentVisibility()
       .checkContentExisting();
 
-  
+
     footer
       .checkContentVisibility()
       .checkContentExisting();
   });
+
+
+  it('Smoke Home page Header', () => {
+    homePage
+      .visit()
+      .checkPageUrl()
+      .checkContentExisting()
+      .checkContentVisibility()
+
+    header
+      .checkContentExisting()
+      .checkContentVisibility()
+      .checkSaleBanner()
+      .checkShopPhone()
+      .checkLinksOpenInTheCurrentTab()
+      .checkHeaderLogo()
+      .checkSearchField()
+      .checkCartSection()
+      .checkMenuSection()
+  })
 });
