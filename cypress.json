@@ -2,8 +2,8 @@
     "video": false,
     "viewportHeight": 1080,
     "viewportWidth": 1920,
-    "baseUrl": "http://automationpractice.com/",
     "env": {
         "allureResultsPath": "./allure-results"
-    }
+    },
+    "baseUrl": "http://prestashop.qatestlab.com.ua/"
 }
