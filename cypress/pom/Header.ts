@@ -1,9 +1,10 @@
-import { find } from "cypress/types/lodash";
 import { BasePage } from "./base/BasePage";
 import { SignInPage } from "./SignInPage";
+import { followUsLinkList } from "../plugins/Enums";
 
 export class Header extends BasePage {
     private menuSectionList: Array<string> = ['Women', 'Dresses', 'T-shirts'];
+
 
     public constructor() {
         super('#header', 'Header');

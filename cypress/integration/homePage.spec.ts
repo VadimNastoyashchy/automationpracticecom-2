@@ -14,15 +14,14 @@ describe('Home Page tests', () => {
       .checkContentVisibility();
 
     header
-      .checkContentVisibility()
-      .checkContentExisting();
-
+      .checkContentExisting()
+      .checkContentVisibility();
 
     footer
       .checkContentVisibility()
-      .checkContentExisting();
+      .checkContentVisibility();
+    ;
   });
-
 
   it('Smoke Home page Header', () => {
     homePage
@@ -42,4 +41,24 @@ describe('Home Page tests', () => {
       .checkCartSection()
       .checkMenuSection()
   })
+
+  it('Smoke Home page Footer', () => {
+    homePage.visit()
+      .checkPageUrl()
+      .checkContentExisting()
+      .checkContentVisibility();
+
+    footer
+      .checkContentExisting()
+      .checkContentVisibility()
+      .chechNewsletterSection()
+      .checkFollowUsSection()
+      .checkFollowUsSection()
+      .checkCategoriesSection()
+      .checkinformationSection()
+      .checkMyAccountSection()
+      .checkStoreInformationSection()
+      .checkCorporateSection()
+  })
 });
+
