@@ -1,0 +1,28 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "plugin:cypress/recommended"
+  ],
+  "rules": {
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "no-trailing-spaces": "error",
+    "@typescript-eslint/typedef": [
+      "error",
+      {
+        "parameter": true
+      }
+    ],
+    "@typescript-eslint/semi": [
+      "error"
+    ]
+  }
+}

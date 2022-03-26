@@ -1,9 +1,10 @@
 {
-    "video": false,
-    "viewportHeight": 1080,
-    "viewportWidth": 1920,
-    "env": {
-        "allureResultsPath": "./allure-results"
-    },
-    "baseUrl": "http://prestashop.qatestlab.com.ua/"
+  "video": false,
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
+  "env": {
+    "allureResultsPath": "./allure-results",
+    "geolocationApi": "https://freegeoip.app/json/"
+  },
+  "baseUrl": "http://prestashop.qatestlab.com.ua/"
 }

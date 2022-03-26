@@ -1,30 +1,24 @@
-
 export class BaseAPI {
-    protected END_POINT: string;
 
-    constructor(end_point: string) {
-        this.END_POINT = end_point;
+    constructor() {
     }
 
-
-    public GET(): this {
+    public GET(url: string): this {
         cy.allure().startStep('Send GET request and receive response');
         cy.request({
             method: 'GET',
-            url: this.END_POINT,
+            url: url,
             failOnStatusCode: false
-          }).as('response');
-        cy.allure().endStep;
-       
-        return this
+        }).as('response');
+        cy.allure().endStep();
+        return this;
     }
 
     public checkResponseStatusCode(expectedStatusCode: number): this {
         cy.allure().startStep(`Check Response is ${expectedStatusCode}`);
         cy.get('@response').its('status').should('eq', expectedStatusCode);
-        cy.allure().endStep;
-
-        return this
+        cy.allure().endStep();
+        return this;
     }
 
 }
