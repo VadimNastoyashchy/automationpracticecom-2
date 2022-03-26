@@ -1,7 +1,7 @@
-import { BasePage } from './base/BasePage';
+import {BasePage} from './base/BasePage';
 
 export class ContactUsPage extends BasePage {
-  constructor() {
-    super('#contact', 'ContactUsPage', 'en/contact-us');
-  }
+    constructor() {
+        super('#contact', 'ContactUsPage', 'en/contact-us');
+    }
 }

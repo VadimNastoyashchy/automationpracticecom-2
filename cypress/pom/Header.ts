@@ -1,6 +1,5 @@
-import { find } from "cypress/types/lodash";
-import { BasePage } from "./base/BasePage";
-import { SignInPage } from "./SignInPage";
+import {BasePage} from './base/BasePage';
+import {SignInPage} from './SignInPage';
 
 export class Header extends BasePage {
     private menuSectionList: Array<string> = ['Women', 'Dresses', 'T-shirts'];
@@ -10,45 +9,49 @@ export class Header extends BasePage {
     }
 
     private get contactUsLink(): Cypress.Chainable {
-        return this.container.find('#contact-link', { timeout: 10000 });
+        return this.container.find('#contact-link', {timeout: 10000});
     }
 
     private get signInLink(): Cypress.Chainable {
-        return this.container.find('.header_user_info', { timeout: 10000 });
+        return this.container.find('.header_user_info', {timeout: 10000});
     }
 
     private get menuSection(): Cypress.Chainable {
-        return this.container.find('[class*="menu-content"]', { timeout: 10000 });
+        return this.container.find('[class*="menu-content"]', {timeout: 10000});
     }
 
     private get saleBanner(): Cypress.Chainable {
-        return this.container.find('.banner img.img-responsive', { timeout: 10000 });
+        return this.container.find('.banner img.img-responsive', {timeout: 10000});
     }
+
     private get shopPhone(): Cypress.Chainable {
-        return this.container.find('.shop-phone', { timeout: 10000 });
+        return this.container.find('.shop-phone', {timeout: 10000});
     }
 
     private get headerLogo(): Cypress.Chainable {
-        return this.container.find('img.logo', { timeout: 10000 });
+        return this.container.find('img.logo', {timeout: 10000});
     }
 
     private get searchButton(): Cypress.Chainable {
-        return this.container.find('#searchbox', { timeout: 10000 });
+        return this.container.find('#searchbox', {timeout: 10000});
     }
 
     private get searchInput(): Cypress.Chainable {
-        return this.container.find('input#search_query_top', { timeout: 10000 });
+        return this.container.find('input#search_query_top', {timeout: 10000});
     }
 
     private get cartSection(): Cypress.Chainable {
-        return this.container.find('div.shopping_cart', { timeout: 10000 });
+        return this.container.find('div.shopping_cart', {timeout: 10000});
+    }
+
+    private get mainMenuList(): Cypress.Chainable {
+        return this.container.find('ul.menu-content>li', {timeout: 1000});
     }
 
     public checkContactUsLink(): this {
         cy.allure().startStep('Check "Contact Us" link is present on Header');
         this.contactUsLink.should('be.visible');
         cy.allure().endStep();
-
         return this;
     }
 
@@ -56,7 +59,6 @@ export class Header extends BasePage {
         cy.allure().startStep('Check "Contact Us" link is clickable');
         this.contactUsLink.click();
         cy.allure().endStep();
-
         return this;
     }
 
@@ -64,15 +66,13 @@ export class Header extends BasePage {
         cy.allure().startStep('Check "SignIn" link is present on Header');
         this.signInLink.should('be.visible');
         cy.allure().endStep();
-
         return this;
     }
 
     public clickSignInLink(): SignInPage {
         cy.allure().startStep('Check "SignIn" link is clickable');
         this.signInLink.click();
-        cy.allure().endStep;
-
+        cy.allure().endStep();
         return new SignInPage();
     }
 
@@ -82,7 +82,6 @@ export class Header extends BasePage {
             .should('exist')
             .and('be.visible');
         cy.allure().endStep();
-
         return this;
     }
 
@@ -94,7 +93,6 @@ export class Header extends BasePage {
             .contains('Call us now')
             .contains('0123-456-789');
         cy.allure().endStep();
-
         return this;
     }
 
@@ -104,7 +102,6 @@ export class Header extends BasePage {
             .should('exist')
             .and('be.visible');
         cy.allure().endStep();
-
         return this;
     }
 
@@ -117,7 +114,6 @@ export class Header extends BasePage {
             .children()
             .should('not.have.attr', 'target');
         cy.allure().endStep();
-
         return this;
 
     }
@@ -132,7 +128,6 @@ export class Header extends BasePage {
             .invoke('attr', 'placeholder')
             .should('contain', 'Search')
         cy.allure().endStep();
-
         return this;
     }
 
@@ -142,7 +137,6 @@ export class Header extends BasePage {
             .should('exist')
             .and('be.visible');
         cy.allure().endStep();
-
         return this;
     }
 
@@ -154,7 +148,6 @@ export class Header extends BasePage {
                 .should('be.visible');
         });
         cy.allure().endStep();
-
         return this;
     }
 }
